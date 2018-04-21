@@ -10,10 +10,11 @@ public class MainMenuController : MonoBehaviour {
     public Camera myCamera;
     public Text mazeTitleText;
     public GameObject marbleSelectObjects;
+	public GameObject mazePrefab;
+	public int selectedMarble = 0;
 
 
     private GameObject currentMaze;
-    private int selectedMarble = 0;
     private int state = -1;
     private int mazeIndex = 0;
 
@@ -57,25 +58,30 @@ public class MainMenuController : MonoBehaviour {
                 marbleSelect.SetBool("showing", true);
                 marbleSelectObjects.SetActive(true);
                 break;
-            case 1:
+		case 1:
+				//mazePage.SetBool("showing", true);
                 StartCoroutine(disableObject(marbleSelectObjects));
-                NextMaze();
+				NextMaze();
                 break;
         }
     }
 
-    public void NextMaze() {
-
+	public void NextMaze() {
+		mazePage.SetTrigger("fadeback");
+		StartCoroutine(ChangeMaze());
+		// calls changgee maze eventually
+	}
+	public IEnumerator ChangeMaze() {
+		yield return new WaitForSeconds(1f);
         if (currentMaze != null) {
             GameObject.Destroy(currentMaze);
         }
         mazeIndex++;
 
-        mazePage.SetBool("showing_fadeback", true);
         mazeTitleText.text = "Maze #" + mazeIndex;
 
-        // TODO generate maze
-
-        // TODO set maze parent as currentMaze
+		currentMaze = GameObject.Instantiate(mazePrefab, Vector3.zero, Quaternion.identity);
+		currentMaze.GetComponent<Maze>().mainMenu = this;
+		yield return null;
     }
 }

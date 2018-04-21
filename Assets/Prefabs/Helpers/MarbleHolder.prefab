@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1223109468073926}
+  m_IsPrefabParent: 1
+--- !u!1 &1223109468073926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4582159342074786}
+  - component: {fileID: 114350328764385582}
+  m_Layer: 0
+  m_Name: MarbleHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4582159342074786
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223109468073926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8490837, y: 1.7346234, z: 0.095703125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114350328764385582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223109468073926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b9b4507fb4a141bbfc6e488a69abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c57c203c93210a74685cc4b2a615eda4, type: 3}
+  - {fileID: 21300000, guid: 51dc44400b544ca429e85b719e667880, type: 3}
+  - {fileID: 21300000, guid: 391214e5793b18f48a90eb89f0f8b982, type: 3}
+  - {fileID: 21300000, guid: 1c52a9f6a875a1d4da770a202e31eb1c, type: 3}
+  - {fileID: 21300000, guid: 35b196502fa0d6a43bca6cf3d192c326, type: 3}
+  - {fileID: 21300000, guid: 31af0ae323299aa42822d6c32fc511b4, type: 3}
+  - {fileID: 21300000, guid: 1b246c209bbde68488584edc2dc58467, type: 3}
+  - {fileID: 21300000, guid: 11bfc66169552164aba0b2bcff436f60, type: 3}
+  - {fileID: 21300000, guid: 33de4ebd6d1ad4640872853fa85edad6, type: 3}
+  - {fileID: 21300000, guid: 6e68e783a5d04464dbdb9808dfc6423a, type: 3}
+  - {fileID: 21300000, guid: ec2a0871e98a8134bb12c12dcf2630b7, type: 3}
+  - {fileID: 21300000, guid: 5ad1f95eed36dc14892457e7e12436e6, type: 3}
