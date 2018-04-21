@@ -61,8 +61,8 @@ public class Maze : MonoBehaviour {
 	public void MakePath(Vector2 currentPos, Stack backtrace) {
 		iterations++;
 		if (iterations > 200) {
-			Debug.LogWarning("went over 200 iterations in a recursive loop, no thanks");
-			return;
+			//Debug.LogWarning("went over 200 iterations in a recursive loop, no thanks");
+			//return;
 		}
 		backtrace.Push(currentPos);
 		GridNode currentNode = getGridNode(currentPos);
@@ -71,8 +71,7 @@ public class Maze : MonoBehaviour {
 		for (int i = 0; i < 4; i++) {
 			valids[i] = IsValidLocation(getLocationDir(i, currentPos));
 		}
-		print(valids[0] + " " + valids[1] + " " + valids[2] + " " + valids[3]);
-		return;
+		//print(valids[0] + " " + valids[1] + " " + valids[2] + " " + valids[3]);
 		ArrayList options = new ArrayList();
 		for (int i = 0; i < valids.Length; i++) {
 			if (valids[i]) {
@@ -95,11 +94,11 @@ public class Maze : MonoBehaviour {
 				GridNode g = getGridNode(p);
 				// We set visited to the last path we took from the first
 
-				if (backtrace.Count != 1) {
+				if (backtrace.Count < 1) {
 					g.visited = false;
 					g.sprite.color = Color.white;
 				} else {
-					print(p.x + " " + p.y);
+					//print(p.x + " " + p.y);
 				}
 			}
 	
@@ -122,7 +121,7 @@ public class Maze : MonoBehaviour {
 		return nodes[((int)pos.x)].nodes[((int)pos.y)];
 	}
 	public bool IsValidLocation(Vector2 pos) {
-		print(pos.x + " " + pos.y + " " + nodes[0].nodes.Length);
+		//print(pos.x + " " + pos.y + " " + nodes[0].nodes.Length);
 		if (((int)pos.x) <= 0 || ((int)pos.x) >= nodes.Length || ((int)pos.y) <= 0 || ((int)pos.y) >= nodes[0].nodes.Length) return false; 
 		if (getGridNode(pos).visited) return false;
 
@@ -141,7 +140,7 @@ public class Maze : MonoBehaviour {
 			return new Vector2(((int)pos.x) + 1, ((int)pos.y));
 			break;
 		case 3:
-			return new Vector2(((int)pos.x), ((int)pos.y) + 1);
+			return new Vector2(((int)pos.x), ((int)pos.y) - 1);
 			break;
 		}
 		return pos;
